@@ -4,4 +4,6 @@ from django.http import HttpResponse # added by astrid
 
 #added by astrid
 def index(request):
-    return HttpResponse("Hello, World!")
+    msg = 'My Message'
+    return render(request, 'home/index.html', {'message': msg})
+    # return HttpResponse("Hello, World!")
