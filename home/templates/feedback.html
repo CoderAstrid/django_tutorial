@@ -1,0 +1,15 @@
+{% load staticfiles %}
+{% extends 'base.html' %}
+
+{% block content %}
+    <p>
+        <a href="{% url 'list' %}">Goto feedback</a>        
+    </p>
+    <div>
+        <form method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Save</button>
+        </form>    
+    </div>
+{% endblock content %}
