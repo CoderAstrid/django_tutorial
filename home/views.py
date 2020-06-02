@@ -1,21 +1,18 @@
 from django.shortcuts import render
-from django.http import HttpResponse # added by astrid
-from .models import *
-from .forms import FeedbackForm
+from django.http import HttpResponse
+from django.http import Http404, HttpResponseNotFound
+
 # Create your views here.
-
-#added by astrid
 def index(request):
-    msg = 'My Message'
-    return render(request, 'home/index.html', {'message': msg})
-    # return HttpResponse("Hello, World!")
+    return HttpResponse("Hello, World!")
 
-def create(request):
-    if request.method == 'POST':
-        form = FeedbackForm(request.POST)
-        if form.is_valid():
-            form.save()
-        return redirect('/feedback/list')
-    else:
-        form = FeedbackForm()
-    return render(request, 'feedback.html', {'form': form})
+def error(request):
+    #return HttpResponseNotFound('<h1>not found</h1>')
+    raise Http404("Not Found")
+
+def contact(request):
+    return HttpResponse("Contact us")
+
+def about(request):
+    return HttpResponse('about')
+    

@@ -16,8 +16,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from home import views  # added by jewel
+from feedback import views
+from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.index, name='index'), # added by astrid
+#    path('', views.index, name='index'), # added by astrid    
+    url(r'^feedback/', include('feedback.urls')),
+    url(r'^home/', include('home.urls')),
+#    path('feedback/<int:id>/', feedback.views.display)
 ]

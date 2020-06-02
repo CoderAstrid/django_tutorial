@@ -9,3 +9,6 @@ python .\manage.py migrate
 python .\manage.py dbshell
 
 sqlite> .tables
+
+
+pip install django-debug-toolbar
