@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import *
 from .forms import FeedbackForm
- 
+from bootstrap_datepicker_plus import DateTimePickerInput
+
 def list(request):
     feedbacks = Feedback.objects.all()
     return render(request, 'feedbacklist.html', {'feedbacks': feedbacks})

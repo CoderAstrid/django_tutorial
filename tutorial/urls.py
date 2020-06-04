@@ -18,11 +18,14 @@ from django.urls import path
 from home import views  # added by jewel
 from feedback import views
 from django.conf.urls import url, include
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'', include('home.urls')),
 #    path('', views.index, name='index'), # added by astrid    
     url(r'^feedback/', include('feedback.urls')),
     url(r'^home/', include('home.urls')),
 #    path('feedback/<int:id>/', feedback.views.display)
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
