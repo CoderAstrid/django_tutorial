@@ -7,5 +7,5 @@ class FeedbackForm(ModelForm):
         model = Feedback
         fields = ['id', 'name', 'email', 'comment', 'createDate']
         widgets = {
-            'createDate': DatePickerInput(),
+            'createDate': DatePickerInput(format='%Y-%m-%d'), # specify date-frmat
         }
