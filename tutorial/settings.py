@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'home',                         # added by astrid
     'feedback',                     # added by astrid
     'projects',
+    'blog',
 #    'debug_toolbar',
     'bootstrap4',
     "bootstrap_datepicker_plus",

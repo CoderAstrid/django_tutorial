@@ -8,3 +8,6 @@
 /db.sqlite3
 /projects/__pycache__
 /projects/migrations
+/blog/__pycache__
+/blog/migrations
+/blog/__init__.py

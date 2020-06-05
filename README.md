@@ -19,3 +19,9 @@ static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 pip install django-bootstrap4
 pip install django-bootstrap-datepicker-plus
+
+
+python manage.py createsuperuser
+user name: astrid
+mail: astrid.wang1229@gmail.com
+pwd: 123456
