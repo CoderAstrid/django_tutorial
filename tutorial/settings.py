@@ -39,7 +39,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',    
     'home',                         # added by astrid
     'feedback',                     # added by astrid
-    'debug_toolbar',
+    'projects',
+#    'debug_toolbar',
     'bootstrap4',
     "bootstrap_datepicker_plus",
 ]
