@@ -3,6 +3,7 @@ from django.shortcuts import render
 from blog.models import Post
 from blog.models import Comment
 from .forms import CommentForm
+from django.http import Http404
 
 def blog_index(request):
     posts = Post.objects.all().order_by('-created_on')
@@ -24,7 +25,10 @@ def blog_category(request, category):
     return render(request, "blog_category.html", context)
 
 def blog_detail(request, pk):
-    post = Post.objects.get(pk=pk)
+    try:
+        post = Post.objects.get(pk=pk)
+    except post.DoesNotExist:
+        raise Http404("Question does not exist")
 
     form = CommentForm()
     if request.method == 'POST':
