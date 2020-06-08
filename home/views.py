@@ -4,7 +4,7 @@ from django.http import Http404, HttpResponseNotFound
 
 # Create your views here.
 def index(request):
-    return HttpResponse("Hello, World!")
+    return render(request, 'index.html')
 
 def error(request):
     #return HttpResponseNotFound('<h1>not found</h1>')
