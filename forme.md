@@ -5,7 +5,7 @@ python .\manage.py migrate
 python .\manage.py dbshell
 sqlite> .tables
 static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-\{% load static %\}
+{{% load static %}}
 python manage.py createsuperuser
 
 user name: astrid
